@@ -9,11 +9,11 @@ public class TipeData {
     }
 
     public static void main(String[] args) {
-        String namaLengkap = nama(args);
-        System.out.println("Nama lengkap saya adalah " + namaLengkap);
+        Motor honda = new Motor();
+        System.out.println("jumlah roda : " + honda.roda());
+        System.out.println("jumlah manufacture : " + honda.manufacture());
 
-        Integer pajak = hitungPajak(10, 100);
-        System.out.println("nilai pajak " + pajak);
+        System.out.println("jumlah merek : " + honda.merek());
     }
 
     public static String nama(String[] args) {
