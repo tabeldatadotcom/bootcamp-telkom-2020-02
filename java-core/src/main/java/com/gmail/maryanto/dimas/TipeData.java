@@ -11,8 +11,10 @@ public class TipeData {
         System.out.println("jumlah roda : " + sepeda.data());
 
         sepeda = new Motor();
-        System.out.println("jumlah roda : " + sepeda.data());
+        sepeda.setRoda(2);
+        System.out.println("jumlah roda : " + sepeda.getRoda());
         Motor honda = new Motor();
+
         System.out.println("jumlah roda : "+ honda.getJumlahRoda());
 
         System.out.println("jumlah roda : "+ honda.getJumlahRoda(3));
