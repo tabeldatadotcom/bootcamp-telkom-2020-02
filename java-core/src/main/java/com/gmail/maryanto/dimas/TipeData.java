@@ -1,25 +1,23 @@
 package com.gmail.maryanto.dimas;
 
+import com.gmail.maryanto.dimas.inheritance.Motor;
+import com.gmail.maryanto.dimas.inheritance.Sepeda;
+
 public class TipeData {
 
-    public static Integer hitungPajak(
-            Integer bil1,
-            Integer bil2) {
-        return bil1 * bil2;
-    }
 
     public static void main(String[] args) {
+        Sepeda sepeda = new Sepeda();
+        System.out.println("jumlah roda : " + sepeda.data());
+
+        sepeda = new Motor();
+        System.out.println("jumlah roda : " + sepeda.data());
         Motor honda = new Motor();
-        System.out.println("jumlah roda : " + honda.roda());
-        System.out.println("jumlah manufacture : " + honda.manufacture());
+        System.out.println("jumlah roda : "+ honda.getJumlahRoda());
 
-        System.out.println("jumlah merek : " + honda.merek());
+        System.out.println("jumlah roda : "+ honda.getJumlahRoda(3));
+
+        System.out.println("jumlah roda : "+ honda.getJumlahRoda(3, true));
     }
 
-    public static String nama(String[] args) {
-        for (String data : args) {
-            System.out.println(data);
-        }
-        return "Dimas Maryanto";
-    }
 }
