@@ -55,5 +55,9 @@ public class TipeData {
             System.out.println("Bilangan tidak sama");
         }
 
+        for (int i = 11; i > 0; i--) {
+            System.out.println("Saya berulang sebangak " + i);
+        }
+
     }
 }
