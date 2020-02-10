@@ -1,0 +1,7 @@
+### maven project ###
+target/
+
+### intellij idea ###
+.idea/
+*.iml
+*.ipl
