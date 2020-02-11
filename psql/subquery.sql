@@ -48,4 +48,4 @@ alter table test_table add constraint  uq_pass unique (password)
 Indexes:
 
 
-insert into locations (street_address, postal_code, city, state_province, country_id) values ('Bandung', '40626', 'Bandung', 'Jawa Barat', 11);
+insert into locations (street_address, postal_code, city, state_province, country_id) values ('Bandung', '40626', 'Bandung', 'Jawa Barat', 'HK');
