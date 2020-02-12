@@ -21,4 +21,9 @@ public class KelasService {
     public Kelas save(Kelas kelas) {
         return repo.save(kelas);
     }
+
+    @Transactional
+    public void remove(String id) {
+        repo.deleteById(id);
+    }
 }
