@@ -2,17 +2,21 @@ package com.gmail.maryanto.dimas.belajarspring.controller;
 
 import com.gmail.maryanto.dimas.belajarspring.entity.Kelas;
 import com.gmail.maryanto.dimas.belajarspring.entity.Mahasiswa;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
+@Slf4j
 @Controller
-@RequestMapping("/mahasiswa")
+@RequestMapping("/example")
 public class IndexController {
 
     @GetMapping("/list")
@@ -32,5 +36,14 @@ public class IndexController {
         );
         data.addAttribute("listMahasiswa", listMahasiswa);
         return "index";
+    }
+
+    @GetMapping("/request")
+    public String responseQueryParam(
+            @RequestParam(value = "nama", required = false) String nama,
+            @RequestParam(value = "angkatan", required = false) Integer angkatan) {
+        Kelas kelas = new Kelas(UUID.randomUUID().toString(), nama, angkatan);
+        log.info("{}", kelas);
+        return "redirect:/example/list";
     }
 }
