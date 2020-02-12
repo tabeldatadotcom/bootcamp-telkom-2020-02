@@ -12,7 +12,7 @@ public class BelajarSpringApplication {
 
     public static void main(String[] args) {
         ApplicationContext container = new AnnotationConfigApplicationContext(SpringContainer.class);
-        ClassA classA = container.getBean(ClassA.class, "classA");
+        ClassA classA = container.getBean( "classA", ClassA.class);
 
         System.out.println("Nama saya dari class a " + classA.getClassB().getClassC().getNama());
 

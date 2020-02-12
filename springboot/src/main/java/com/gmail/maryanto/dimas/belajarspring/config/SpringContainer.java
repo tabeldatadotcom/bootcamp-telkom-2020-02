@@ -12,4 +12,10 @@ public class SpringContainer {
     public String getNama() {
         return "Dimas Maryanto";
     }
+
+    @Bean
+    public String getNama1() {
+        return "Muhamad Yusuf";
+    }
+
 }

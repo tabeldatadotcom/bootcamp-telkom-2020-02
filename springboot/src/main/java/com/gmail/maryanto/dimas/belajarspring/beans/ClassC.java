@@ -10,6 +10,6 @@ import org.springframework.stereotype.Component;
 public class ClassC {
 
     @Autowired
-    @Qualifier("getNama")
+    @Qualifier("getNama1")
     private String nama;
 }
