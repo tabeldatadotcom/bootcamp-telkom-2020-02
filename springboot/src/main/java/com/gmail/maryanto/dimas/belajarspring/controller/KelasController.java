@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -21,6 +22,17 @@ public class KelasController {
 
     @GetMapping("/new")
     public String formNew(Model model, @ModelAttribute Kelas kelas) {
+        model.addAttribute("kelas", kelas);
+        return "kelas/add-kelas";
+    }
+
+    @GetMapping("/edit")
+    public String editData(Model model, @ModelAttribute Kelas kelas, @RequestParam("kelasId") String id) {
+        Optional<Kelas> optional = service.findById(id);
+        if (!optional.isPresent()) {
+            return "redirect:/kelas/list";
+        }
+        kelas = optional.get();
         model.addAttribute("kelas", kelas);
         return "kelas/add-kelas";
     }

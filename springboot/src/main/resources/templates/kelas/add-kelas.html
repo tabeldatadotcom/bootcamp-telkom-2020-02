@@ -9,6 +9,9 @@
 <body>
 <form th:object="${kelas}" th:action="@{/kelas/save}" th:method="post" method="post">
     <div>
+        <input type="hidden" name="id" th:field="*{id}">
+    </div>
+    <div>
         <label for="nama">Nama Kelas</label>
         <input type="text" name="nama" id="nama" th:field="*{nama}"/>
     </div>
