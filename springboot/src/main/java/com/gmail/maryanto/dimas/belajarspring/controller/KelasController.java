@@ -35,7 +35,8 @@ public class KelasController {
             return "/kelas/new";
         }
         log.info("{}", kelas);
-        return "redirect:/kelas/new";
+        service.save(kelas);
+        return "redirect:/kelas/list";
     }
 
     @GetMapping("/list")

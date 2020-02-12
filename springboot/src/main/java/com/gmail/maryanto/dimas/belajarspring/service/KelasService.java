@@ -1,20 +1,24 @@
 package com.gmail.maryanto.dimas.belajarspring.service;
 
 import com.gmail.maryanto.dimas.belajarspring.entity.Kelas;
+import com.gmail.maryanto.dimas.belajarspring.repository.KelasRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional(readOnly = true)
 public class KelasService {
 
-    public List<Kelas> findAll() {
-        return Arrays.asList(
-                new Kelas(UUID.randomUUID().toString(), "IF", 2017),
-                new Kelas(UUID.randomUUID().toString(), "IF", 2018),
-                new Kelas(UUID.randomUUID().toString(), "SI", 2017)
-        );
+    @Autowired
+    private KelasRepository repo;
+
+    public Iterable<Kelas> findAll() {
+        return repo.findAll();
+    }
+
+    @Transactional
+    public Kelas save(Kelas kelas) {
+        return repo.save(kelas);
     }
 }
