@@ -5,6 +5,26 @@
     <title>Data Mahasiswa</title>
 </head>
 <body>
+
+<div>
+    Informasi Data mahasiswa per tanggal : <p th:text="${tanggal}"></p>
+
+    <div>
+        <label for="">Kode Kelas</label>
+        <input type="text" readonly th:value="${kelas.id}"/>
+    </div>
+
+    <div>
+        <label for="">Nama Kelas</label>
+        <input type="text" readonly th:value="${kelas.nama}"/>
+    </div>
+
+    <div>
+        <label for="">Nama Kelas</label>
+        <input type="text" readonly th:value="${kelas.angkatan}"/>
+    </div>
+</div>
+
 <h3>Daftar mahasiswa</h3>
 <table>
     <thead>
@@ -17,18 +37,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>10511148</td>
-        <td>Dimas Maryanto</td>
-        <td>IF 2</td>
-        <td>2015</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>10511150</td>
-        <td>Muhamad Yusuf</td>
-        <td>IF 2</td>
-        <td>2015</td>
+    <tr th:each="mhs : ${listMahasiswa}">
+        <td th:text="${mhs.nim}">105123434</td>
+        <td th:text="${mhs.nama}">Dimas Maryanto</td>
+        <td th:text="${mhs.kelas.nama}">IF</td>
+        <td th:text="${mhs.kelas.angkatan}">2011</td>
         <td></td>
     </tr>
     </tbody>
